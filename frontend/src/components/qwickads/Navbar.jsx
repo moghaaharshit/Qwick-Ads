@@ -26,9 +26,7 @@ export const Navbar = ({ onCta }) => {
       >
         <div className="flex items-center justify-between">
           <a href="#top" data-testid="logo" className="flex items-center gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 font-display text-sm font-black text-white shadow-[0_0_20px_rgba(139,92,246,0.6)]">
-              Q
-            </span>
+            <img src="/logo.png" alt="QwickAds Logo" className="h-12 w-12 rounded-xl object-contain" style={{ filter: "drop-shadow(0 0 10px rgba(255,255,255,0.7)) drop-shadow(0 0 20px rgba(255,255,255,0.3))" }} />
             <span className="font-display text-lg font-extrabold tracking-tight">
               Qwick<span className="text-violet-400">Ads</span>
             </span>

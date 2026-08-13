@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, MapPin } from "lucide-react";
-import { Counter } from "./Counter";
 
 const LINES = ["Your Brand", "Travels With", "Every Passenger"];
 const lineVariants = {
@@ -10,17 +9,8 @@ const lineVariants = {
 };
 const FALLBACK = [{ type: "image", media: "/generated/hero.png" }];
 
-export const Hero = ({ onStart, onDemo, slides, stats }) => {
+export const Hero = ({ onStart, onDemo, slides }) => {
   const list = slides && slides.length ? slides : FALLBACK;
-  const pick = (label, dv, ds) => {
-    const s = (stats || []).find((x) => x.label === label);
-    return s ? { v: s.value, s: s.suffix } : { v: dv, s: ds };
-  };
-  const chips = [
-    { ...pick("Active Screens", 100, "+"), l: "Active Screens" },
-    { ...pick("Daily Reach", 25000, "+"), l: "Daily Reach" },
-    { ...pick("Monthly Impressions", 7, "M+"), l: "Impressions / mo" },
-  ];
   const [idx, setIdx] = useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -83,14 +73,7 @@ export const Hero = ({ onStart, onDemo, slides, stats }) => {
           </button>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6, duration: 1 }} className="mt-12 grid max-w-2xl grid-cols-3 gap-4 border-t border-white/10 pt-6">
-          {chips.map((s) => (
-            <div key={s.l}>
-              <div className="font-display text-2xl font-extrabold text-white md:text-3xl"><Counter value={s.v} suffix={s.s} /></div>
-              <div className="mt-1 text-xs text-slate-400 md:text-sm">{s.l}</div>
-            </div>
-          ))}
-        </motion.div>
+
       </motion.div>
 
       {list.length > 1 && (

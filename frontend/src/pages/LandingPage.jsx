@@ -48,7 +48,7 @@ export default function LandingPage() {
       <div className="grain relative min-h-screen bg-[#080808] text-white antialiased">
         <Navbar onCta={openCampaign} />
         <main>
-          <Hero onStart={openCampaign} onDemo={openDemo} slides={content.hero} stats={content.stats} />
+          <Hero onStart={openCampaign} onDemo={openDemo} slides={content.hero} />
           <EditorialMarquee />
           <ScreenShowcase items={content.showcase} />
           <NetworkImpact stats={content.stats} />
