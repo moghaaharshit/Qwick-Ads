@@ -43,7 +43,7 @@ export const Footer = ({ onStart, onDemo }) => (
 
       <div className="mt-24 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
         <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 font-display text-sm font-black text-white">Q</span>
+          <img src="/logo.png" alt="QwickAds Logo" className="h-12 w-12 rounded-xl object-contain" style={{ filter: "drop-shadow(0 0 10px rgba(255,255,255,0.7)) drop-shadow(0 0 20px rgba(255,255,255,0.3))" }} />
           <span className="font-display text-lg font-extrabold">Qwick<span className="text-violet-400">Ads</span></span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">

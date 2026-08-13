@@ -41,7 +41,7 @@ export default function AdminLogin() {
         data-testid="admin-login-card"
       >
         <div className="mb-8 flex items-center gap-3">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 font-display text-base font-black text-white">Q</span>
+          <img src="/logo.png" alt="QwickAds Logo" className="h-12 w-12 rounded-xl object-contain" style={{ filter: "drop-shadow(0 0 10px rgba(255,255,255,0.7)) drop-shadow(0 0 20px rgba(255,255,255,0.3))" }} />
           <div>
             <div className="font-display text-lg font-extrabold">Qwick<span className="text-violet-400">Ads</span></div>
             <div className="text-xs text-slate-400">Content Admin</div>
