@@ -57,7 +57,21 @@ const SCHEMAS = {
   },
 };
 
-const TABS = [...Object.keys(SCHEMAS), "live-video"];
+const TABS = [...Object.keys(SCHEMAS), "live-video", "control-panel"];
+
+function ControlPanel() {
+  return (
+    <div className="fixed inset-0 z-50 bg-[#080808]">
+      <iframe
+        src="https://cabadsrun.netlify.app/"
+        title="Control Panel"
+        className="h-full w-full border-0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  );
+}
 
 function LiveVideoPanel() {
   const [url, setUrl] = useState("");
@@ -256,12 +270,14 @@ export default function AdminDashboard() {
               data-testid={`admin-tab-${t}`}
               className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors duration-300 ${tab === t ? "btn-primary text-white" : "glass text-slate-300 hover:bg-white/10"}`}
             >
-              {t === "live-video" ? "Live Video" : SCHEMAS[t].label}
+              {t === "live-video" ? "Live Video" : t === "control-panel" ? "Control Panel" : SCHEMAS[t].label}
             </button>
           ))}
         </div>
 
-        {tab === "live-video" ? (
+        {tab === "control-panel" ? (
+          <ControlPanel />
+        ) : tab === "live-video" ? (
           <LiveVideoPanel />
         ) : (
           <>
